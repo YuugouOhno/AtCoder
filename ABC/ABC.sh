@@ -4,13 +4,10 @@ mkdir -p ABC$1 && cd ABC$1
 if [ -n "$2" ]; then
     for ((i=0;i<${#2};i++)); do
         CHAR="${2:i:1}"
-        touch "$CHAR.cpp"
-        if (i==0); then
-            echo "cd ABC$1" > "$CHAR.cpp"
-        fi
-        code "$CHAR.cpp"
+        touch "$CHAR.py"
+        code "$CHAR.py"
     done
 else
-    touch A.cpp
-    code A.cpp
+    touch A.py
+    code A.py
 fi
